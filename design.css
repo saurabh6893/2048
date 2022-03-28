@@ -37,12 +37,30 @@ body {
 }
 
 .tile {
+  --x: 0;
+  --y: 2;
+  --background-lightness: 80%;
+  --text-lightness: 20%;
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: bold;
   width: var(--cell-size);
   height: var(--cell-size);
-  background-color: blue;
+  /* background-color: blue; */
   border-radius: 1vmin;
+  top: calc(var(--y) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
+  left: calc(var(--x) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
+  background-color: hsl(200, 50%, var(--background-lightness));
+  color: hsl(200, 25%, var(--text-lightness));
+  animation: game 300ms ease-in-out;
+  transition: 150ms ease-in-out;
+}
+
+@keyframes game {
+  0% {
+    opacity: 0.5;
+    transform: scale(0);
+  }
 }
