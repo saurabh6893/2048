@@ -47,7 +47,7 @@ function slideTiles(cells) {
       const cell = group[i]
       if (cell.tile == null) continue
       let lastValidCell
-      for (j = i - 1; j >= 0; j--) {
+      for (let j = i - 1; j >= 0; j--) {
         const moveToCell = group[j]
         if (!moveToCell.canAccept(cell.tile)) break
         lastValidCell = moveToCell
